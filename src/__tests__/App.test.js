@@ -5,6 +5,7 @@ import { mockData } from '../mock-data';
 import { extractLocations, getEvents } from '../api';
 import EventList from '../EventList';
 import CitySearch from '../CitySearch';
+import NumberOfEvents from '../NumberOfEvents';
 
 
 //Unit tests
@@ -55,6 +56,23 @@ describe('<App /> integration', () => {
         const allEvents = await getEvents();
         const eventsToShow = allEvents.filter(event => event.location === selectedCity);
         expect(AppWrapper.state('events')).toEqual(eventsToShow);
+        AppWrapper.unmount();
+    });
+
+    test('get list of all events when user selects "See all cities"', async () => {
+        const AppWrapper = mount(<App />);
+        const suggestionItems = AppWrapper.find(CitySearch).find('.suggestions li');
+        await suggestionItems.at(suggestionItems.length - 1).simulate('click');
+        const allEvents = await getEvents();
+        expect(AppWrapper.state('events')).toEqual(allEvents);
+        AppWrapper.unmount();
+    });
+
+    test('pass NumberOfEvents state to 32', () => {
+        const AppWrapper = mount(<App />);
+        const AppNumberOfEventsState = AppWrapper.state('numberOfEvents');
+        expect(AppNumberOfEventsState).not.toEqual(undefined);
+        expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(32);
         AppWrapper.unmount();
     });
 });
