@@ -15,8 +15,7 @@ function WelcomeScreen(props) {
                         <div class="google-icon-wrapper">
                             <img
                                 class="google-icon"
-                                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Log
-o.svg"
+                                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
                                 alt="Google sign-in"
                             />
                         </div>
@@ -29,7 +28,7 @@ o.svg"
                     </div>
                 </div>
                 <a
-                    href="https://TwoFloorLoft.github.io/meet/privacy.html"
+                    href="https://TwoFloorLoft.github.io/meet/public/privacy.html"
                     rel="nofollow noopener"
                 >
                     Privacy policy
