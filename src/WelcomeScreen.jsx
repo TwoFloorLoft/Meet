@@ -1,5 +1,6 @@
 import React from "react";
 import './WelcomeScreen.css';
+
 function WelcomeScreen(props) {
     return props.showWelcomeScreen ?
         (
@@ -28,7 +29,7 @@ function WelcomeScreen(props) {
                     </div>
                 </div>
                 <a
-                    href="https://TwoFloorLoft.github.io/meet/public/privacy.html"
+                    href="https://TwoFloorLoft.github.io/meet/privacy.html"
                     rel="nofollow noopener"
                 >
                     Privacy policy
