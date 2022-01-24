@@ -79,10 +79,11 @@ class App extends Component {
   };
 
   render() {
+    const { locations, numberOfEvents } = this.state;
     if (this.state.showWelcomeScreen === undefined) {
       return <div className="App" />
     };
-    const { locations, numberOfEvents } = this.state;
+
 
     return (
       <div className="App">
@@ -91,11 +92,13 @@ class App extends Component {
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <h4>Events in each city</h4>
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} errorText={this.state.errorText} />
-        <ScatterChart width={400} height={400} margin={{ top: 20, right: 20, bottom: 20, left: 20, }}> <CartesianGrid />
-          <XAxis type="number" dataKey="x" name="stature" unit="cm" />
-          <YAxis type="number" dataKey="y" name="weight" unit="kg" />
+        <ScatterChart width={730} height={250}
+          margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis type="category" dataKey="city" name="city" />
+          <YAxis type="number" dataKey="number" name="number of events" />
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-          <Scatter name="A school" data={data} fill="#8884d8" />
+          <Scatter data={this.getData()} fill="#8884d8" />
         </ScatterChart>
         <EventList events={this.state.events} />
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
