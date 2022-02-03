@@ -8,6 +8,7 @@ import EventGenre from './EventGenre';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import logo from './logo.png';
 
 class App extends Component {
   state = {
@@ -88,7 +89,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Meet App</h1>
+        <img src={require('./logo.jpeg')} />
         <h4>Choose your nearest city</h4>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} errorText={this.state.errorText} />
