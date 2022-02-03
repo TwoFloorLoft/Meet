@@ -2,6 +2,7 @@ import './nprogress.css';
 import React, { Component } from 'react';
 import './App.css';
 import EventList from './EventList';
+import Logo from './meetlogo.png'
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents'
 import EventGenre from './EventGenre';
@@ -88,7 +89,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Meet App</h1>
+        <Logo />
         <h4>Choose your nearest city</h4>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} errorText={this.state.errorText} />
