@@ -89,7 +89,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <img src={require('./logo.jpeg')} />
+        <img src={logo} />
         <h4>Choose your nearest city</h4>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} errorText={this.state.errorText} />
