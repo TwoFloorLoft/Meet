@@ -8,7 +8,7 @@ import EventGenre from './EventGenre';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import logo from './logo.png';
+import logo from '../public/logo.png';
 
 class App extends Component {
   state = {
